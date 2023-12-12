@@ -49,7 +49,7 @@ const HomeCaroselSection = ({ data }) => {
                 top: "10rem",
                 left: "0rem",
                 transform: "translateX(-100%) rotate(-90deg)",
-                bgcolor: "grey(30)",
+                bgcolor: "white",
                 ":hover": { bgcolor: "grey" },
                 boxShadow: 10,
               }}
