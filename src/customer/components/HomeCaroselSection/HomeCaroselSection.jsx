@@ -1,115 +1,88 @@
-import React, { useState, useEffect , useRef} from "react";
-import AliceCarousel from "react-alice-carousel";
-import 'react-alice-carousel/lib/alice-carousel.css';
+import React, { useRef } from "react";
+import Slider from "react-slick";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Button } from "@mui/material";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
+const HomeCaroselSection = ({ data }) => {
+   // This reference object will be used to hold a reference to the Slider component. 
+   //The useRef hook allows us to persist the value of sliderRef across renders.
+  const sliderRef = useRef();
 
-const HomeCaroselSection = ({data}) => {
-    
-console.log("Items received as prop:",data);
-
-    const [activeIndex, setActiveIndex]=useState(0);
-    const carouselRef = useRef();
-    useEffect(() => {
-        console.log("Active Index after update:", activeIndex);
-      }, [activeIndex]);
-   
-   
-  const responsive = {
-    0: { items: 1 },
-    720: { items: 3 },
-    1024: { items: 5.5 },
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 3,
   };
 
-  //function when button is clicked it increment the slide item and decrement through useState
- // const slidePrev = () => setActiveIndex(activeIndex-1);
-
-  //const slideNext = () => setActiveIndex(activeIndex+1);
-  const slidePrev = () => {
-    carouselRef.current.slidePrev();
-    setActiveIndex(activeIndex - 1);
-  };
-
-  const slideNext = () => {
-    carouselRef.current.slideNext();
-    setActiveIndex(activeIndex + 1);
-  };
-
-//we are assigning the items of slide to useState variable 
-const syncActiveIndex=({item})=>{ console.log("Sync Active Index:", item);
-setActiveIndex(item);};
-console.log("Data before mapping:", data);
-const items = data && data.slice(0, 10).map((item,index) => <HomeSectionCard key={index} product={item} /> );
-  console.log("Items after mapping:", items);
   return (
     <div className="px-4 lg:px-8 border">
       <div className="relative p-5">
-      {console.log("active index before carosel:", activeIndex)}
-      {data && data.length > 10 && (
+        {data && data.length > 0 && (
           <>
-        <AliceCarousel
-          ref={carouselRef}
-          //arrow buttons and dots are disabled
-          disableDotsControls
-          disableButtonsControls
-          items={items}
-          responsive={responsive}
-          //for slide changes we are running this function which will assign the item to usestate variable
-          onInitialized={({ item }) => setActiveIndex(item)}
-        />
-         {console.log("active index after carosel:", activeIndex)}
-        {console.log("Data before buttons:", data)}
-          
-        {activeIndex !== 0 && <Button
-                variants="contained"
-                className="z-50"
-                onClick={slidePrev}
-                sx={{
-                  position: "absolute",
-                  top: "10rem",
-                  left: "0rem",
-                  transform: "translateX(-100%) rotate(-90deg)",
-                  bgcolor: "grey(30)",
-                  ":hover": { bgcolor: "grey" },
-                  boxShadow: 10,
-                }}
-                aria-label="prev"
-              >
-                <KeyboardArrowRightIcon
-                  sx={{ transform: "rotate(-90deg)", color: "black" }}
-                />
-              </Button>
-}
-            
+          {/* The ref attribute is used to pass a callback function that sets the value of 
+          sliderRef.current to the Slider component when it is mounted. This way, we can access the Slider  */}
+          {/* The settings object likely contains configuration options for the Slider component, such as the number 
+          of slides to show, infinite scrolling, etc.The spread operator ({...settings}) is used to pass all the 
+          properties of the settings object as individual props to the Slider component. */}
+            <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
+              {data.map((item, index) => (
+                <HomeSectionCard key={index} product={item} />
+              ))}
+            </Slider>
 
-            
-              {activeIndex !== items.length - 10 && <Button
-                variants="contained"
-                onClick={slideNext}
-                className="z-50 hover:bg-red-400"
-                sx={{
-                  position: "absolute",
-                  top: "10rem",
-                  right: "0rem",
-                  transform: "translateX(100%) rotate(-90deg)",
-                  bgcolor: "white",
-                  ":hover": { bgcolor: "grey" },
-                  boxShadow: 10,
-                }}
-                aria-label="next"
-              >
-                <KeyboardArrowRightIcon
-                  sx={{ transform: "rotate(90deg)", color: "black" }}
-                />
-              </Button>
-}
+            {/* we use sliderRef.current.slickPrev() and sliderRef.current.slickNext() to call the slickPrev and
+             slickNext methods of the Slider component. These methods are provided by the react-slick library and 
+             allow you to programmatically navigate to the previous or next slide. */}
+            <Button
+              variant="contained"
+              className="z-50"
+              onClick={() => {
+                sliderRef.current.slickPrev();
+              }}
+              sx={{
+                position: "absolute",
+                top: "10rem",
+                left: "0rem",
+                transform: "translateX(-100%) rotate(-90deg)",
+                bgcolor: "grey(30)",
+                ":hover": { bgcolor: "grey" },
+                boxShadow: 10,
+              }}
+              aria-label="prev"
+            >
+              <KeyboardArrowRightIcon
+                sx={{ transform: "rotate(-90deg)", color: "black" }}
+              />
+            </Button>
 
-            
-</>
-      )}
-      
+            <Button
+              variant="contained"
+              onClick={() => {
+                sliderRef.current.slickNext();
+              }}
+              className="z-50 hover:bg-red-400"
+              sx={{
+                position: "absolute",
+                top: "10rem",
+                right: "0rem",
+                transform: "translateX(100%) rotate(-90deg)",
+                bgcolor: "white",
+                ":hover": { bgcolor: "grey" },
+                boxShadow: 10,
+              }}
+              aria-label="next"
+            >
+              <KeyboardArrowRightIcon
+                sx={{ transform: "rotate(90deg)", color: "black" }}
+              />
+            </Button>
+          </>
+        )}
       </div>
     </div>
   );
