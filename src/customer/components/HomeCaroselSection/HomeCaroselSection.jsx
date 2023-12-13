@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const HomeCaroselSection = ({ data }) => {
+const HomeCaroselSection = ({ data, sectionName }) => {
    // This reference object will be used to hold a reference to the Slider component. 
    //The useRef hook allows us to persist the value of sliderRef across renders.
   const sliderRef = useRef();
@@ -21,6 +21,7 @@ const HomeCaroselSection = ({ data }) => {
 
   return (
     <div className="px-4 lg:px-8 border">
+        <h2 className="text-2xl font-extrabold text-gray-900 py-3 max-w-max">{sectionName}</h2>
       <div className="relative p-5">
         {data && data.length > 0 && (
           <>

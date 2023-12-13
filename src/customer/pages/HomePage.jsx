@@ -8,9 +8,12 @@ const HomePage = () => {
     <div>
        <Carosel/>
         <div className='space-y-10 py-10 px-3 lg:px-8 flex flex-col justify-center'>
-          <HomeCaroselSection data={mens_kurta}/>
+          <HomeCaroselSection data={mens_kurta} sectionName= {"Men's Kurta"}/>
+          <HomeCaroselSection data={mens_kurta} sectionName= {"Men's Shirts"}/>
+          <HomeCaroselSection data={mens_kurta} sectionName= {"Men's Shoes"}/>
+          <HomeCaroselSection data={mens_kurta} sectionName= {"Women's Saree"}/>
+          <HomeCaroselSection data={mens_kurta} sectionName= {"Women's Dress "}/>
          
-          
         </div>
     </div>
   )
