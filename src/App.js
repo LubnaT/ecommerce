@@ -7,7 +7,7 @@ import Footer from './customer/components/Footer/Footer';
 function App() {
   return (
     <div className="App">
-     <Navigation/>
+  <Navigation/>
      <div>
       <HomePage/>
       <HomeSectionCard/>
