@@ -1,0 +1,8 @@
+.productGrid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

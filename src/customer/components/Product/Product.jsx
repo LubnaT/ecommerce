@@ -3,6 +3,9 @@ import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+import { mens_kurta } from '../../../Data/mens_kurta'
+import ProductCard from './ProductCard'
+import './Product.css'
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -192,7 +195,7 @@ export default function Product() {
                   leaveTo="transform opacity-0 scale-95"
                 >
                   <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
+                    <div className="py-1 ">
                       {sortOptions.map((option) => (
                         <Menu.Item key={option.name}>
                           {({ active }) => (
@@ -238,7 +241,7 @@ export default function Product() {
               {/* Filters */}
               <form className="hidden lg:block">
                 <h3 className="sr-only">Categories</h3>
-                <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
+                <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm text-left font-medium text-gray-900">
                   {subCategories.map((category) => (
                     <li key={category.name}>
                       <a href={category.href}>{category.name}</a>
@@ -291,7 +294,11 @@ export default function Product() {
               </form>
 
               {/* Product grid */}
-              <div className="lg:col-span-3">{/* Your content */}</div>
+              <div className="lg:col-span-3 w-full">
+                <div className='productGrid'>
+                    {mens_kurta.map((item)=><ProductCard/>)}
+                </div>
+              </div>
             </div>
           </section>
         </main>
