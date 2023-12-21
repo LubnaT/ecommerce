@@ -295,9 +295,11 @@ export default function Product() {
 
               {/* Product grid */}
               <div className="lg:col-span-3 w-full">
-                <div className='productGrid'>
-                    {mens_kurta.map((item)=><ProductCard/>)}
-                </div>
+              
+                    {mens_kurta && mens_kurta.length>0 ? (  <div className='productGrid'>
+                        {mens_kurta.map((item,index)=> (<ProductCard  key={index} product={item}/>))}
+                        </div>):(<p>No Product Avialable</p>)}
+                
               </div>
             </div>
           </section>

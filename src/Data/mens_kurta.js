@@ -3,10 +3,10 @@ export const mens_kurta=[
         "imageUrl": "https://rukminim1.flixcart.com/image/612/612/l5h2xe80/kurta/x/6/n/xl-kast-tile-green-majestic-man-original-imagg4z33hu4kzpv.jpeg?q=70",
         "brand": "Majestic Man",
         "title": "Men Printed Pure Cotton Straight Kurta",
-        "color": "Green",
         "discountedPrice": 499,
         "price": 1499,
         "discountPersent": 66,
+        "color": "Green",
         "size": [
             {
               "name": "S",
