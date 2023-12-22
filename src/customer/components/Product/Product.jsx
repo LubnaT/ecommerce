@@ -9,6 +9,7 @@ import './Product.css'
 import { filters, singleFilters } from './FilterData'
 import { FormControl,FormLabel,RadioGroup, FormControlLabel, Radio} from '@mui/material'
 import FilterListIcon from '@mui/icons-material/FilterList';
+import { useLocation } from 'react-router-dom'
 
 const sortOptions = [
   { name: 'Price: Low to High', href: '#', current: false },
@@ -22,6 +23,11 @@ function classNames(...classes) {
 
 export default function Product() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+  const location=useLocation()
+
+  const handleFilter=()=>{
+     const searchParamms = new URLSearchParams(location.search)
+    }
 
   return (
     <div className="bg-white">
