@@ -44,7 +44,7 @@ const Footer = () => {
 
     {/* copyright grid */}
 
-<Grid className='pt-20 item xs={12} w-full'>
+<Grid className='pt-16  item xs={12} w-full'>
 <Typography variants="body2" component="p" align="center"> &copy; 2023 My Company. All rights reserved.</Typography>
 <Typography variant="body2" component="p" align="center"> Made with love by Me.</Typography>
 <Typography variant="body2" component="p" align="center">Icons made by

@@ -5,18 +5,20 @@ import HomeSectionCard from './customer/components/HomeSectionCard/HomeSectionCa
 import Footer from './customer/components/Footer/Footer';
 import ProductCard from './customer/components/Product/ProductCard';
 import Product from './customer/components/Product/Product';
+import ProductDetails from './customer/components/ProductDetails/ProductDetails';
 
 function App() {
   return (
     <div className="App">
   <Navigation/>
      <div>
-     <Product/>
+      <ProductDetails/>
+     {/* <Product/> */}
       {/* <HomePage/>
       <HomeSectionCard/>
      </div>
-     <div>
-      <Footer/> */}
+     <div>*/}
+      <Footer/> 
       
      </div>
     </div>
