@@ -23,21 +23,27 @@ function classNames(...classes) {
 }
 
 export default function Product() {
+  // This hook manages the state of whether the mobile filters are open or not.
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+  // This hook from React Router provides access to the current URL location.
   const location=useLocation()
+  //This hook from React Router provides a function (navigate) to programmatically navigate to different pages within the application.
   const navigate=useNavigate()
 
   const handleFilter=(value,sectionId)=>{
+    //It constructs a URLSearchParams object based on the current location's search parameters.
      const searchParamms = new URLSearchParams(location.search)
-
+//It retrieves the existing filter values for the specified sectionId.
      let filterValue=searchParamms.getAll(sectionId)
+     //If the selected value is already in the filters, it removes it; otherwise, it adds it.
      if(filterValue.length>0 && filterValue[0].split(",").includes(value)){
       filterValue = filterValue[0].split(",").filter((item)=>item!==value);
-    
+    //If there are no filter values left, it deletes the filter section from the search parameters.
     if(filterValue.length===0){
       searchParamms.delete(sectionId)
     }
       }
+      //It sets the updated filter values in the search parameters.
       else{
         filterValue.push(value)
       }
@@ -46,13 +52,16 @@ export default function Product() {
         searchParamms.set(sectionId,filterValue.join(","));
         
       }
+      //It constructs the new query string and updates the URL using navigate.
       const query=searchParamms.toString();
       navigate({search:`?${query}`})
     }
-
+//It constructs a URLSearchParams object based on the current location's search parameters.
     const handleRadioFilterChange =(e, sectionId)=>{ 
       const searchParamms = new URLSearchParams(location.search)
+      //It sets the selected radio button value for the specified sectionId.
       searchParamms.set(sectionId,e.target.value)
+//It constructs the new query string and updates the URL using navigate.
       const query=searchParamms.toString();
       navigate({search:`?${query}`})
     }
