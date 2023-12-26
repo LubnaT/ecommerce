@@ -67,8 +67,8 @@ export default function ProductDetails() {
   const [selectedSize, setSelectedSize] = useState(product.sizes[2])
 
   return (
-    <div className="bg-white">
-      <div className="pt-6">
+    <div className="bg-white px-4">
+      <div className="pt-6 ">
         <nav aria-label="Breadcrumb">
           <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             {product.breadcrumbs.map((breadcrumb) => (
@@ -132,7 +132,7 @@ export default function ProductDetails() {
           {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product information</h2>
-            <div className='flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6'>
+            <div className='flex space-x-5 items-center text-lg lg:text-lg text-gray-900 mt-6'>
                 <p className='font-semibold'>199/-</p>
                 <p className='opacity-50 line-through'>50% off</p>
                 <p className='font-semibold text-green-600'>555/-</p>
