@@ -37,3 +37,21 @@
 
     justify-content: center;
 }
+
+@media  (min-width:1024px) {
+    .maindivPlg{
+        grid-column: span 1/span 1;
+        max-width: 30rem;
+        /* 1280px */
+        padding-left: 120px;
+        padding-right: 62px;
+        padding-bottom: 96px;
+    } 
+}
+
+@media (min-width:640px){
+    .maindivPsm{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

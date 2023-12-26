@@ -123,15 +123,22 @@ export default function ProductDetails() {
         </div>
 
         {/* Product info */}
-        <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
-          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
+        <div className="maindivPlg maindivPsm px-4 pb-16 max-w-2xl max-h-auto">
+          <div className="lg:col-span-2 ">
+            <h1 className="text-lg font-semibold text-gray-900 lg:text-xl">Universaloutfite</h1>
+            <h1 className="text-lg text-gray-900 lg:text-xl opacity-60 pt-1">Casual Puff Sleeves Solid Women White Top</h1>
           </div>
 
           {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
+            <div className='flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6'>
+                <p className='font-semibold'>199/-</p>
+                <p className='opacity-50 line-through'>50% off</p>
+                <p className='font-semibold text-green-600'>555/-</p>
+
+            </div>
+            
 
             {/* Reviews */}
             <div className="mt-6">
