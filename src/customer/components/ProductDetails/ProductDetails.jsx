@@ -1,8 +1,9 @@
 
 import { useState } from 'react'
-import { StarIcon } from '@heroicons/react/20/solid'
+import { StarIcon} from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import './ProductDetails.css'
+import { Rating } from '@mui/material'
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -134,33 +135,20 @@ export default function ProductDetails() {
             <h2 className="sr-only">Product information</h2>
             <div className='flex space-x-5 items-center text-lg lg:text-lg text-gray-900 mt-6'>
                 <p className='font-semibold'>199/-</p>
-                <p className='opacity-50 line-through'>50% off</p>
-                <p className='font-semibold text-green-600'>555/-</p>
+                <p className='opacity-50 line-through'>555/-</p>
+                <p className='font-semibold text-green-600'>50% off</p>
 
             </div>
             
 
             {/* Reviews */}
             <div className="mt-6">
-              <h3 className="sr-only">Reviews</h3>
-              <div className="flex items-center">
-                <div className="flex items-center">
-                  {[0, 1, 2, 3, 4].map((rating) => (
-                    <StarIcon
-                      key={rating}
-                      className={classNames(
-                        reviews.average > rating ? 'text-gray-900' : 'text-gray-200',
-                        'h-5 w-5 flex-shrink-0'
-                      )}
-                      aria-hidden="true"
-                    />
-                  ))}
+                <div className='flex items-center space-x-3'>
+                <Rating name="read-only" value={5.5} readOnly />
+                <p className='text-sm opacity-60'>5009 Ratings</p>
+                <p className='text-sm font-medium text-indigo-600 hover:text-indigo-400'>399 Reviews</p>
                 </div>
-                <p className="sr-only">{reviews.average} out of 5 stars</p>
-                <a href={reviews.href} className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                  {reviews.totalCount} reviews
-                </a>
-              </div>
+
             </div>
 
             <form className="mt-10">
