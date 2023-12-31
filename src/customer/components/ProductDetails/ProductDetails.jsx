@@ -3,7 +3,8 @@ import { useState } from 'react'
 import { StarIcon} from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import './ProductDetails.css'
-import { Button, Rating } from '@mui/material'
+import { Button, Rating , Grid} from '@mui/material'
+import ProductReviewCard from './ProductReviewCard'
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -260,7 +261,16 @@ export default function ProductDetails() {
             
             {/* review and ratings  */}
         <section>
-            <h1 className='text-lg pb-4 font-semibold'>Recent Reviews and ratings</h1>
+            <h1 className='text-lg pb-6 text-left font-semibold'>Recent Reviews and ratings</h1>
+            <div classhame="border p-5"> 
+                <Grid container spacing={7}>
+                    <Grid item xs={7}> 
+                        <div classname='space-y-5'>
+                            <ProductReviewCard/>
+                        </div>
+                    </Grid>
+                </Grid>
+            </div>
         </section>
        
       </div>

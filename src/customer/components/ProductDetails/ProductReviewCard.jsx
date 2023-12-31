@@ -4,8 +4,8 @@ import { Grid,Box, Avatar, Rating } from "@mui/material";
 const ProductReviewCard = () => {
   return (
     <div>
-      <Grid container spacing={2} gap={3}>
-        <Grid item xs={1}>
+      <Grid container >
+        <Grid item xs={1} sx={{paddingLeft:4}}>
           <Box>
             <Avatar
               classname="text-white"
@@ -15,7 +15,7 @@ const ProductReviewCard = () => {
             </Avatar>
           </Box>
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={9} sx={{textAlign:"left",paddingLeft:6}}>
           <div classname="space-y-2">
             <div>
               <p>Raam </p>
