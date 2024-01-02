@@ -4,10 +4,10 @@ import { Grid,Box, Avatar, Rating } from "@mui/material";
 const ProductReviewCard = () => {
   return (
     <div>
-      <Grid container >
+      <Grid container sx={{paddingBottom:2}}>
         <Grid item xs={1} sx={{paddingLeft:4}}>
           <Box>
-            <Avatar
+          <Avatar
               classname="text-white"
               sx={{ width: 56, height: 56, bgcolor: "#515574" }}
             >
@@ -15,8 +15,8 @@ const ProductReviewCard = () => {
             </Avatar>
           </Box>
         </Grid>
-        <Grid item xs={9} sx={{textAlign:"left",paddingLeft:6}}>
-          <div classname="space-y-2">
+        <Grid item xs={9} sx={{textAlign:"left",paddingLeft:6, fontSize:14}}>
+          <div classname="space-y-2 text-sm">
             <div>
               <p>Raam </p>
               <p>April 5, 2023</p>
