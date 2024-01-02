@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { StarIcon} from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import './ProductDetails.css'
-import { Button, Rating , Grid} from '@mui/material'
+import { Button, Rating , Grid, Box, LinearProgress} from '@mui/material'
 import ProductReviewCard from './ProductReviewCard'
 
 const product = {
@@ -268,6 +268,59 @@ export default function ProductDetails() {
                         <div classname='space-y-5'>
                             {[1,1,1].map((item)=><ProductReviewCard/>)}
                         </div>
+                    </Grid>
+
+                    <Grid item xs={5}>
+                      <h1 className='font-semibold text-xl pb-2'>Product Ratings</h1>
+                      <div className='flex items-center space-x-2'>
+                        <Rating value={4.5} precision={.5} readOnly/>
+                        <p className='opacity-60 '>2233 Ratings</p>
+                      </div>
+
+                      <Box className='mt-5 space-y-2'>
+                        {/* 1 */}
+                        <Grid container alignItems="center" gap={2}>
+                          <Grid item xs={2}>
+                            <p>Excellent</p>
+                          </Grid>
+                          <Grid item xs={7}>
+                          <LinearProgress variant='determinate' value={50} color='success' 
+                           sx={{bgcolor:'#d0d0d0', borderRadius:6, height:7}}/>
+                          </Grid>
+                        </Grid>
+
+                        {/* 2 */}
+                        <Grid container alignItems="center" gap={2}>
+                          <Grid item xs={2}>
+                            <p>Good</p>
+                          </Grid>
+                          <Grid item xs={7}>
+                          <LinearProgress variant='determinate' value={60} color='success' 
+                           sx={{bgcolor:'#d0d0d0', borderRadius:6, height:7}}/>
+                          </Grid>
+                        </Grid>
+                        {/* 3 */}
+                        <Grid container alignItems="center" gap={2}>
+                          <Grid item xs={2}>
+                            <p>Average</p>
+                          </Grid>
+                          <Grid item xs={7}>
+                          <LinearProgress variant='determinate' value={30} color='primary' 
+                           sx={{bgcolor:'#d0d0d0', borderRadius:6, height:7}}/>
+                          </Grid>
+                        </Grid>
+                        {/* 4 */}
+                        <Grid container alignItems="center" gap={2}>
+                          <Grid item xs={2}>
+                            <p>poor</p>
+                          </Grid>
+                          <Grid item xs={7}>
+                          <LinearProgress variant='determinate' value={20} color='error' 
+                           sx={{bgcolor:'#d0d0d0', borderRadius:6, height:7}}/>
+                          </Grid>
+                        </Grid>
+                        
+                      </Box>
                     </Grid>
                 </Grid>
             </div>
