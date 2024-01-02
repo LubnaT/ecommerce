@@ -312,7 +312,7 @@ export default function ProductDetails() {
                         {/* 4 */}
                         <Grid container alignItems="center" gap={2}>
                           <Grid item xs={2}>
-                            <p>poor</p>
+                            <p>Poor</p>
                           </Grid>
                           <Grid item xs={7}>
                           <LinearProgress variant='determinate' value={20} color='error' 
@@ -324,6 +324,11 @@ export default function ProductDetails() {
                     </Grid>
                 </Grid>
             </div>
+        </section>
+
+        {/* Similar products */}
+        <section className='pt-10'>
+          <h1 className='font-semibold text-xl text-left'>Similar Products</h1>
         </section>
        
       </div>
