@@ -97,9 +97,9 @@ export default function ProductDetails() {
             </li>
           </ol>
         </nav>
-
+          {/* Image gallery and product info */}
         <section className='productSection gridlarge '>
-             {/* Image gallery */}
+            {/* Image gallery */}
         <div className="productImage">
           <div className="mainImage">
             <img
@@ -131,7 +131,7 @@ export default function ProductDetails() {
 
           {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <h2 className="sr-only">Product information</h2>
+            <h2 className="sr-only">Product Information</h2>
             <div className='flex space-x-5 items-center text-lg lg:text-lg text-gray-900 mt-6'>
                 <p className='font-semibold'>199/-</p>
                 <p className='opacity-50 line-through'>555/-</p>
@@ -229,12 +229,12 @@ export default function ProductDetails() {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">{product.description}</p>
+                <p className="text-sm text-gray-900">{product.description}</p>
               </div>
             </div>
 
             <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
+              <h3 className="text-sm  font-medium text-gray-900">Highlights</h3>
 
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
@@ -248,7 +248,7 @@ export default function ProductDetails() {
             </div>
 
             <div className="mt-10">
-              <h2 className="text-sm font-medium text-gray-900">Details</h2>
+              <h2 className="text-sm  font-medium text-gray-900">Details</h2>
 
               <div className="mt-4 space-y-6">
                 <p className="text-sm text-gray-600">{product.details}</p>
