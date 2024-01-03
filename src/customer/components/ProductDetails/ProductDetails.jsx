@@ -329,6 +329,7 @@ export default function ProductDetails() {
         {/* Similar products */}
         <section className='pt-10'>
           <h1 className='font-semibold text-xl text-left'>Similar Products</h1>
+          <div></div>
         </section>
        
       </div>
