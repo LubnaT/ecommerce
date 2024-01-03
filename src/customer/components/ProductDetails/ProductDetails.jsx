@@ -133,8 +133,8 @@ export default function ProductDetails() {
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product Information</h2>
             <div className='flex space-x-5 items-center text-lg lg:text-lg text-gray-900 mt-6'>
-                <p className='font-semibold'>199/-</p>
-                <p className='opacity-50 line-through'>555/-</p>
+                <p className='font-semibold'> ₹199/-</p>
+                <p className='opacity-50 line-through'> ₹555/-</p>
                 <p className='font-semibold text-green-600'>50% off</p>
 
             </div>
