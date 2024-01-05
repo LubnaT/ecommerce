@@ -125,7 +125,7 @@ export default function ProductDetails() {
         {/* Product info */}
         <div className="maindivPlg maindivPsm px-4 pb-16 max-w-2xl max-h-auto">
           <div className="lg:col-span-2 ">
-            <h1 className="text-lg font-semibold text-gray-900 lg:text-xl">Universaloutfite</h1>
+            <h1 className="text-lg font-semibold text-gray-900 lg:text-xl">Universaloutfite mai</h1>
             <h1 className="text-lg text-gray-900 lg:text-xl opacity-60 pt-1">Casual Puff Sleeves Solid Women White Top</h1>
           </div>
 
